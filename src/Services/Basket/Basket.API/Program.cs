@@ -1,4 +1,6 @@
 using Basket.API.Extensions;
+using Basket.API.Repositories;
+using Basket.API.Repositories.Interfaces;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +16,7 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 builder.Services.AddRedis(builder.Configuration);
+builder.Services.AddScoped<IBasketRepository, BasketRepository>();
 
 
 var app = builder.Build();
