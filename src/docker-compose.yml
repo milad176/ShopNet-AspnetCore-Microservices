@@ -7,6 +7,8 @@ services:
   basketdb:
     image: redis:alpine
 
+  discountdb:
+    image: postgres
 
   catalog.api:
     image: ${DOCKER_REGISTRY-}catalogapi
@@ -22,7 +24,7 @@ services:
 
 volumes:
   mongo_data:
-
+  postgres_data:
 
 
 
