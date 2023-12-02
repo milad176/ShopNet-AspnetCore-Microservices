@@ -1,4 +1,5 @@
 using Discount.API.Extensions;
+using Discount.API.Grpc;
 using Discount.API.Repositories;
 using Discount.API.Repositories.Interfaces;
 
@@ -7,6 +8,7 @@ builder.Services.MigrateDatabase<Program>();
 
 // Add services to the container.
 builder.Services.AddControllers();
+builder.Services.AddGrpc();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -24,6 +26,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseAuthorization();
 
+app.MapGrpcService<DiscountService>();
 app.MapControllers();
 
 app.Run();
