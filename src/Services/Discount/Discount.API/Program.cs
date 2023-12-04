@@ -5,6 +5,7 @@ using Discount.API.Repositories.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.MigrateDatabase<Program>();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 // Add services to the container.
 builder.Services.AddControllers();
