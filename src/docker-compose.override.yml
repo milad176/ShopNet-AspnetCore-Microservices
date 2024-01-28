@@ -53,6 +53,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - "CacheSettings:ConnectionString=basketdb:6379"
+      - "GrpcSettings:DiscountUrl=http://discount.api:81"
     depends_on:
       - basketdb
     ports:
@@ -64,6 +65,8 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - "DatabaseSettings:ConnectionString=Server=discountdb;Port=5432;Database=DiscountDb;User Id=admin;Password=admin1234;"
+      - Kestrel__Endpoints__HTTP__Url=http://0.0.0.0:80
+      - Kestrel__Endpoints__GRPC__Url=http://0.0.0.0:81
     depends_on:
       - discountdb 
     ports:
