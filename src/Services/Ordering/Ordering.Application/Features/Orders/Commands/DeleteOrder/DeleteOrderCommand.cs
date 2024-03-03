@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Ordering.Application.Features.Orders.DeleteOrder
+namespace Ordering.Application.Features.Orders.Commands.DeleteOrder
 {
     public class DeleteOrderCommand : IRequest
     {

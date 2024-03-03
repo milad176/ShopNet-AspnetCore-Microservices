@@ -5,7 +5,7 @@ using Ordering.Application.Contracts.Persistence;
 using Ordering.Application.Exceptions;
 using Ordering.Domain.Entities;
 
-namespace Ordering.Application.Features.Orders.DeleteOrder
+namespace Ordering.Application.Features.Orders.Commands.DeleteOrder
 {
     public class DeleteOrderCommandHandler : IRequestHandler<DeleteOrderCommand>
     {
