@@ -9,8 +9,8 @@ namespace Ordering.Infrastructure.Mail
 {
     public class EmailService : IEmailService
     {
-        private readonly EmailSettings _emailSettings;
-        private readonly ILogger<EmailService> _logger;
+        public readonly EmailSettings _emailSettings;
+        public readonly ILogger<EmailService> _logger;
 
         public EmailService(IOptions<EmailSettings> emailSettings, ILogger<EmailService> logger)
         {
